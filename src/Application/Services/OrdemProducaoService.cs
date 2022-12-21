@@ -17,10 +17,10 @@ public class OrdemProducaoService : IOrdemProducaoService
         _mapper = mapper;
     }
 
-    public async Task<OrdemProducao> Create(OrdemProducaoPostDTO ordem)
+    public async Task<OrdemProducaoGetDTO> Create(OrdemProducaoPostDTO ordem)
     {
         var ordemEntity = _mapper.Map<OrdemProducao>(ordem);
-        return await _repository.CreateAsync(ordemEntity);
+        return _mapper.Map<OrdemProducaoGetDTO>(await _repository.CreateAsync(ordemEntity));
     }
 
     public async Task<OrdemProducaoGetDTO>? GetById(int id)

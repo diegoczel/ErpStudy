@@ -11,4 +11,6 @@ public class AppDbContext : DbContext
 	}
 
 	public DbSet<OrdemProducao> OrdemProducao { get; set; }
+
+	public DbSet<Produto> Produtos { get; set; }
 }

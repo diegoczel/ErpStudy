@@ -50,7 +50,44 @@ namespace Infra.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProdutoId");
+
                     b.ToTable("OrdemProducao");
+                });
+
+            modelBuilder.Entity("Domain.Models.Produto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Complemento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProdutoTipo")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Produtos");
+                });
+
+            modelBuilder.Entity("Domain.Models.OrdemProducao", b =>
+                {
+                    b.HasOne("Domain.Models.Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Produto");
                 });
 #pragma warning restore 612, 618
         }

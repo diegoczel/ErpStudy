@@ -7,6 +7,7 @@ public class OrdemProducao : Entity
     public string Numero { get; set; } = string.Empty;
 
     public int ProdutoId { get; set; }
+    public Produto Produto { get; set; }
 
     public EOrdemProducaoStatus Status { get; set; }
 
