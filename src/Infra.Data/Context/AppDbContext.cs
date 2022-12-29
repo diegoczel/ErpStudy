@@ -10,6 +10,11 @@ public class AppDbContext : DbContext
 
 	}
 
+	protected override void OnModelCreating(ModelBuilder builder)
+	{
+		base.OnModelCreating(builder);
+		builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+	}
 	public DbSet<OrdemProducao> OrdemProducao { get; set; }
 
 	public DbSet<Produto> Produtos { get; set; }

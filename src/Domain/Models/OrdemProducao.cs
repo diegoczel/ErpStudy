@@ -9,6 +9,9 @@ public class OrdemProducao : Entity
     public int ProdutoId { get; set; }
     public Produto Produto { get; set; }
 
+    public int LinhaProducaoId { get; set; }
+    public LinhaProducao LinhaProducao { get; set; }
+
     public EOrdemProducaoStatus Status { get; set; }
 
     public double QuantidadeAbertura { get; set; }
