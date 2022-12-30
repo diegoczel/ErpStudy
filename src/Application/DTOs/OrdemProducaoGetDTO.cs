@@ -12,6 +12,8 @@ public class OrdemProducaoGetDTO
 
     public int ProdutoId { get; set; }
 
+    public int LinhaProducaoId { get; set; }
+
     public EOrdemProducaoStatus Status { get; set; }
 
     public double QuantidadeAbertura { get; set; }

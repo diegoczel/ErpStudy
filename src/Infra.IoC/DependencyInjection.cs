@@ -36,6 +36,21 @@ public static class DependencyInjection
         services.AddScoped<IValidator<ProdutoPostDTO>, ProdutoPostDTOValidator>();
         #endregion
 
+        #region LinhaProducao
+        services.AddScoped<ILinhaProducaoRepository, LinhaProducaoRepository>();
+        services.AddScoped<ILinhaProducaoService, LinhaProducaoService>();
+        #endregion
+
+        #region RoteiroProducao
+        services.AddScoped<IRoteiroProducaoRepository, RoteiroProducaoRepository>();
+        services.AddScoped<IRoteiroProducaoService, RoteiroProducaoService>();
+        #endregion
+
+        #region RecursosProducao
+        services.AddScoped<IRecursosProducaoRepository, RecursosProducaoRepository>();
+        services.AddScoped<IRecursosProducaoService, RecursosProducaoService>();
+        #endregion
+
         services.AddAutoMapper(typeof(DomainToDTOMapping));
 
         return services;

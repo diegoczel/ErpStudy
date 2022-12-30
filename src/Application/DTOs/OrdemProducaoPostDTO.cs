@@ -8,6 +8,8 @@ public class OrdemProducaoPostDTO
 
     public int ProdutoId { get; set; }
 
+    public int LinhaProducaoId { get; set; }
+
     public double QuantidadeAbertura { get; set; }
 
 }

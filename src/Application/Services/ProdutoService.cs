@@ -20,7 +20,7 @@ public class ProdutoService : IProdutoService
 	public async Task<ProdutoGetDTO> Create(ProdutoPostDTO produto)
 	{
 		var produtoEntity = _mapper.Map<Produto>(produto);
-		return _mapper.Map<ProdutoGetDTO>((await _repository.CreateAsync(produtoEntity)));
+		return _mapper.Map<ProdutoGetDTO>(await _repository.CreateAsync(produtoEntity));
 	}
 
 	public async Task<ProdutoGetDTO>? GetById(int id)

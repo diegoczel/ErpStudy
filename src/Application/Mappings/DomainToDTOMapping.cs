@@ -13,5 +13,14 @@ public class DomainToDTOMapping : Profile
 
 		CreateMap<Produto, ProdutoPostDTO>().ReverseMap();
 		CreateMap<Produto, ProdutoGetDTO>().ReverseMap();
-	}
+
+        CreateMap<LinhaProducao, LinhaProducaoPostDTO>().ReverseMap();
+        CreateMap<LinhaProducao, LinhaProducaoGetDTO>().ReverseMap();
+
+        CreateMap<RoteiroProducao, RoteiroProducaoPostDTO>().ReverseMap();
+        CreateMap<RoteiroProducao, RoteiroProducaoGetDTO>().ReverseMap();
+
+        CreateMap<RecursosProducao, RecursosProducaoPostDTO>().ReverseMap();
+        CreateMap<RecursosProducao, RecursosProducaoGetDTO>().ReverseMap();
+    }
 }
