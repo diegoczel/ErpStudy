@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "8f821547-f078-4a8d-8da1-01b5a2a725ca",
+		"name": "ErpStudy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "ProdutoPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"produto\",\r\n  \"complemento\": \"complemento\",\r\n  \"produtoTipo\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}produto",
+							"host": [
+								"{{url}}produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProdutoGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}produto/1",
+							"host": [
+								"{{url}}produto"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LinhaProducao",
+			"item": [
+				{
+					"name": "LinhaPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empresa\": 0,\r\n  \"descricao\": \"linha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}linhaproducao",
+							"host": [
+								"{{url}}linhaproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LinhaGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}linhaproducao/1",
+							"host": [
+								"{{url}}linhaproducao"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RoteiroProducao",
+			"item": [
+				{
+					"name": "RoteiroPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empresa\": 0,\r\n  \"linhaProducaoId\": 1,\r\n  \"sequencia\": 1,\r\n  \"descricao\": \"roteiro2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}roteiroproducao",
+							"host": [
+								"{{url}}roteiroproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RoteiroGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}roteiroproducao/3",
+							"host": [
+								"{{url}}roteiroproducao"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RecursosProducao",
+			"item": [
+				{
+					"name": "RecursoPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empresa\": 0,\r\n  \"roteiroProducaoId\": 2,\r\n  \"produtoId\": 1,\r\n  \"quantidadePadrao\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}recursosproducao",
+							"host": [
+								"{{url}}recursosproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RecursoGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}recursosproducao/1",
+							"host": [
+								"{{url}}recursosproducao"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrdemProducao",
+			"item": [
+				{
+					"name": "OrdemProducaoPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empresa\": 0,\r\n  \"numero\": \"string\",\r\n  \"produtoId\": 1,\r\n  \"linhaProducaoId\": 1,\r\n  \"quantidadeAbertura\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}ordemproducao",
+							"host": [
+								"{{url}}ordemproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OrdemProducaoPostGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}ordemproducao/1",
+							"host": [
+								"{{url}}ordemproducao"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ApontamentoProducao",
+			"item": [
+				{
+					"name": "ApontamentoPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empresa\": 0,\r\n  \"ordemProducaoId\": 1,\r\n  \"roteiroProducaoOrigemId\": 1,\r\n  \"roteiroProducaoDestinoId\": 2,\r\n  \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}apontamentoproducao",
+							"host": [
+								"{{url}}apontamentoproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ApontamentoGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}apontamentoproducao/2",
+							"host": [
+								"{{url}}apontamentoproducao"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConsumoProducao",
+			"item": [
+				{
+					"name": "ConsumoPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"empresa\": 0,\r\n  \"ordemProducaoId\": 1,\r\n  \"apontamentoProducaoId\": 2,\r\n  \"produtoId\": 1,\r\n  \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}consumoproducao",
+							"host": [
+								"{{url}}consumoproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsumoPost Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}consumoproducao/1",
+							"host": [
+								"{{url}}consumoproducao"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://localhost:7024/",
+			"type": "default"
+		}
+	]
+}

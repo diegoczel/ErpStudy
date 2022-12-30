@@ -22,7 +22,7 @@ public class ApontamentoProducaoConfiguration : IEntityTypeConfiguration<Apontam
 
         builder.HasOne(apr => apr.RoteiroProducaoDestino)
             .WithMany()
-            .HasForeignKey(apr => apr.RoteiroProducaoOrigemId)
+            .HasForeignKey(apr => apr.RoteiroProducaoDestinoId)
             .OnDelete(DeleteBehavior.NoAction);
     }
 }

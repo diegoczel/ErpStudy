@@ -51,6 +51,16 @@ public static class DependencyInjection
         services.AddScoped<IRecursosProducaoService, RecursosProducaoService>();
         #endregion
 
+        #region ApontamentoProducao
+        services.AddScoped<IApontamentoProducaoRepository, ApontamentoProducaoRepository>();
+        services.AddScoped<IApontamentoProducaoService, ApontamentoProducaoService>();
+        #endregion
+
+        #region ConsumoProducao
+        services.AddScoped<IConsumoProducaoRepository, ConsumoProducaoRepository>();
+        services.AddScoped<IConsumoProducaoService, ConsumoProducaoService>();
+        #endregion
+
         services.AddAutoMapper(typeof(DomainToDTOMapping));
 
         return services;
