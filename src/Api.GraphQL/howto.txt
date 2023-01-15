@@ -1,0 +1,146 @@
+graphql
+
+install
+	HotChocolate.AspNetCore
+	
+Program.cs
+	builder.Services.AddGraphQLServer();
+	app.MapGraphQL();
+	
+Create an QueryType with resolver
+	using Domain.Models;
+	using HotChocolate;
+	using Infra.Data.Context;
+	using Microsoft.EntityFrameworkCore;
+
+	namespace Api.GraphQL.GraphQL.Query;
+
+	public class QueryType
+	{
+		// is an Resolver. Return response to the user
+		public async Task<IEnumerable<Produto>> AllProdutosAsync([Service] AppDbContext context)
+		{
+			// TODO ? change to Repository or Service
+			return await context.Produtos.ToListAsync();
+		}
+	}
+
+Register QueryType in Program.cs
+	builder.Services.AddGraphQLServer().AddQueryType<QueryType>();
+	
+Sample query to retrieve data
+	goto https://localhost:[port-number]/grpahql
+	query{
+	    AllProdutos{
+			id
+			name
+	   }
+	}
+	
+Create MutationType for Create
+	public async Task<Produto> SaveProdutoAsync([Service] AppDbContext context, Produto produto)
+    {
+        context.Produtos.Add(produto);
+        await context.SaveChangesAsync();
+        return produto;
+    }
+	
+	Register in Program.cs
+		builder.Services.AddGraphQLServer()
+			.AddQueryType<QueryType>()
+			.AddMutationType<MutationType>();
+			
+	example of code
+	mutation($newPro:ProdutoInput!){
+	  saveProduto(produto: $newPro) {
+		id
+	  }
+	}
+	// variable
+	{
+	  "newPro": {
+		"id": 0,
+		"nome": "skol 269",
+		"complemento": "tenso",
+		"produtoTipo": "REVENDA"
+	  }
+	}
+	>> result
+	{
+	  "data": {
+		"saveProduto": {
+		  "id": 18
+		}
+	  }
+	}
+	
+Create MutationType for Update
+	public async Task<Produto> UpdateProdutoAsync([Service] AppDbContext context, Produto produto)
+    {
+        context.Produtos.Update(produto);
+        await context.SaveChangesAsync();
+        return produto;
+    }
+	
+	Register in Program.cs
+		builder.Services.AddGraphQLServer()
+			.AddQueryType<QueryType>()
+			.AddMutationType<MutationType>();
+			
+	Example of code
+	mutation($updatePro:ProdutoInput!){
+	  updateProduto(produto: $updatePro) {
+		id,
+		nome,
+		complemento,
+		produtoTipo
+	  }
+	}
+	// variable
+	{
+	  "updatePro": {
+		"id": 18,
+		"nome": "skol 365ml",
+		"complemento": "ambev",
+		"produtoTipo": "REVENDA"
+	  }
+	}
+	>> result
+	{
+	  "data": {
+		"updateProduto": {
+		  "id": 18,
+		  "nome": "skol 365ml",
+		  "complemento": "ambev",
+		  "produtoTipo": "REVENDA"
+		}
+	  }
+	}
+	
+Create MutationType for Delete
+	public async Task<string> DeleteProdutoAsync([Service] AppDbContext context, int id)
+    {
+        var produto = await context.Produtos.FirstOrDefaultAsync(x => x.Id == id);
+
+        if (produto == null)
+            return "Invalid Operation";
+
+        context.Produtos.Remove(produto);
+        await context.SaveChangesAsync();
+        return "Record Deleted!";
+    }
+	
+	mutation($proId:Int!){
+	  deleteProduto(id: $proId) 
+	}
+	
+	// variable
+	{
+	  "proId": 18
+	}
+	>> 
+	{
+	  "data": {
+		"deleteProduto": "Record Deleted!"
+	  }
+	}

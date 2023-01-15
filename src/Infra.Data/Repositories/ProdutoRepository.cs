@@ -1,6 +1,8 @@
 ﻿using Domain.Interfaces;
 using Domain.Models;
 using Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using System.Collections;
 
 namespace Infra.Data.Repositories
 {
@@ -24,5 +26,11 @@ namespace Infra.Data.Repositories
         {
             return _context.Produtos.FirstOrDefault(p => p.Id == id);
         }
+
+        public async Task<IEnumerable<Produto>> GetAllAsync()
+        {
+            return await _context.Produtos.ToListAsync();
+        }
+
     }
 }

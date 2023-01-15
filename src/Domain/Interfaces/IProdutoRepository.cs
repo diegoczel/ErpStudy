@@ -7,4 +7,6 @@ public interface IProdutoRepository
     Task<Produto> CreateAsync(Produto produto);
 
     Task<Produto>? GetByIdAsync(int id);
+
+    Task<IEnumerable<Produto>> GetAllAsync();
 }
