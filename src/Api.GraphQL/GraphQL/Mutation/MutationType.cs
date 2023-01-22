@@ -21,15 +21,15 @@ public class MutationType
         return produto;
     }
 
-    public async Task<string> DeleteProdutoAsync([Service] AppDbContext context, int id)
+    public async Task<bool> DeleteProdutoAsync([Service] AppDbContext context, int id)
     {
         var produto = await context.Produtos.FirstOrDefaultAsync(x => x.Id == id);
 
         if (produto == null)
-            return "Invalid Operation";
+            return false;
 
         context.Produtos.Remove(produto);
         await context.SaveChangesAsync();
-        return "Record Deleted!";
+        return true;
     }
 }

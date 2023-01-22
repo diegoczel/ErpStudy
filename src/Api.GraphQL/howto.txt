@@ -31,9 +31,9 @@ Register QueryType in Program.cs
 Sample query to retrieve data
 	goto https://localhost:[port-number]/grpahql
 	query{
-	    AllProdutos{
+	    allProdutos{
 			id
-			name
+			nome
 	   }
 	}
 	
