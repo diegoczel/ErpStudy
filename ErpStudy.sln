@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.GraphQL", "src\Api.Grap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.GraphQL.Client", "src\Api.GraphQL.Client\Api.GraphQL.Client.csproj", "{3478F797-916E-4526-96B1-1ED05BBE4446}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Console.Test", "test\Api.Console.Test\Api.Console.Test.csproj", "{72826860-86CD-423D-ADEE-1E57B19D9B60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{3478F797-916E-4526-96B1-1ED05BBE4446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3478F797-916E-4526-96B1-1ED05BBE4446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3478F797-916E-4526-96B1-1ED05BBE4446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72826860-86CD-423D-ADEE-1E57B19D9B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72826860-86CD-423D-ADEE-1E57B19D9B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72826860-86CD-423D-ADEE-1E57B19D9B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72826860-86CD-423D-ADEE-1E57B19D9B60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{F4C6C99C-19B2-4FAC-90EE-763ADE3956A8} = {40140986-357E-415D-97F0-360B9C6C1D3B}
 		{FA6D9698-4918-4BF1-BA08-45EEBA9AE720} = {EA44441B-9C63-4F0A-88EE-23C873B6357D}
 		{3478F797-916E-4526-96B1-1ED05BBE4446} = {EA44441B-9C63-4F0A-88EE-23C873B6357D}
+		{72826860-86CD-423D-ADEE-1E57B19D9B60} = {40140986-357E-415D-97F0-360B9C6C1D3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7EE771F-E7F8-4B5A-AF91-CBF86830E303}
