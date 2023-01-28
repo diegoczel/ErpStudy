@@ -21,11 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Test", "test\Domain.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Data.Test", "test\Infra.Data.Test\Infra.Data.Test.csproj", "{F4C6C99C-19B2-4FAC-90EE-763ADE3956A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.GraphQL", "src\Api.GraphQL\Api.GraphQL.csproj", "{FA6D9698-4918-4BF1-BA08-45EEBA9AE720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.GraphQL", "src\Api.GraphQL\Api.GraphQL.csproj", "{FA6D9698-4918-4BF1-BA08-45EEBA9AE720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.GraphQL.Client", "src\Api.GraphQL.Client\Api.GraphQL.Client.csproj", "{3478F797-916E-4526-96B1-1ED05BBE4446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.GraphQL.Client", "src\Api.GraphQL.Client\Api.GraphQL.Client.csproj", "{3478F797-916E-4526-96B1-1ED05BBE4446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Console.Test", "test\Api.Console.Test\Api.Console.Test.csproj", "{72826860-86CD-423D-ADEE-1E57B19D9B60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Console.Test", "test\Api.Console.Test\Api.Console.Test.csproj", "{72826860-86CD-423D-ADEE-1E57B19D9B60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Console.RestSharpTest", "test\Api.Console.RestSharpTest\Api.Console.RestSharpTest.csproj", "{6876206B-CEC0-4E63-8B34-9726B8DCEC7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{72826860-86CD-423D-ADEE-1E57B19D9B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72826860-86CD-423D-ADEE-1E57B19D9B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72826860-86CD-423D-ADEE-1E57B19D9B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6876206B-CEC0-4E63-8B34-9726B8DCEC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6876206B-CEC0-4E63-8B34-9726B8DCEC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6876206B-CEC0-4E63-8B34-9726B8DCEC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6876206B-CEC0-4E63-8B34-9726B8DCEC7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
